@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Text, View } from '../components/Themed';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default function TabTwoScreen() {
+export default function TabThreeScreen() {
   const [sprite, setSprite] = useState('');
   const [data, setData] = useState([]);
   const [types, setTypes] = useState([]);
@@ -18,7 +18,7 @@ export default function TabTwoScreen() {
   );
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/pikachu').then((result) => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/squirtle').then((result) => {
       const { data } = result;
       setSprite(data.sprites.back_default)
 
@@ -97,9 +97,9 @@ export default function TabTwoScreen() {
   );
 }
 
-const bgColor = '#000';
-const sectionTitleColor = '#e92929';
-const baseColor = '#ffe62d';
+const bgColor = '#93c8d0';
+const sectionTitleColor = '#ca7721';
+const baseColor = '#297383';
 // const secondaryColor = '#F2684A';
 
 const styles = StyleSheet.create({
@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingLeft: 21,
     backgroundColor: `${baseColor}`,
-    color: 'black'
   },
   item: {
     fontSize: 20,
@@ -150,8 +149,7 @@ const styles = StyleSheet.create({
   },
   listItem: {
     fontSize: 20,
-    margin: 7,
-    color: 'black'
+    margin: 7
   },
   separator: {
     marginVertical: 3,
